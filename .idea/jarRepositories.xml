@@ -12,6 +12,11 @@
       <option name="url" value="https://jitpack.io" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="codemc" />
+      <option name="name" value="codemc" />
+      <option name="url" value="https://repo.codemc.org/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="sonatype" />
       <option name="name" value="sonatype" />
       <option name="url" value="https://oss.sonatype.org/content/groups/public/" />
@@ -35,6 +40,16 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="rayzr" />
+      <option name="name" value="rayzr" />
+      <option name="url" value="https://rayzr.dev/repo/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="placeholderapi" />
+      <option name="name" value="placeholderapi" />
+      <option name="url" value="https://repo.extendedclip.com/content/repositories/PlaceholderAPI/" />
     </remote-repository>
   </component>
 </project>

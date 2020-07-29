@@ -9,6 +9,7 @@ import me.clip.placeholderapi.expansion.Configurable;
 import me.clip.placeholderapi.expansion.Relational;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -16,10 +17,10 @@ import java.util.Map;
 
 public class NationRelationExpansion extends PlaceholderExpansion implements Relational, Configurable, Cacheable {
 
-    private String own;
-    private String neutral;
-    private String enemy;
-    private String ally;
+    private String own = "&a";
+    private String neutral = "&f";
+    private String enemy = "&c";
+    private String ally = "&d";
 
     @Override
     public boolean canRegister(){
@@ -47,7 +48,6 @@ public class NationRelationExpansion extends PlaceholderExpansion implements Rel
 
     @Override
     public void clear() {
-
     }
 
     @Override
@@ -71,6 +71,11 @@ public class NationRelationExpansion extends PlaceholderExpansion implements Rel
     }
 
     @Override
+    public String onRequest(OfflinePlayer offlinePlayer, String s) {
+        return "test2";
+    }
+
+    @Override
     public String onPlaceholderRequest(Player playerOne, Player playerTwo, String identifier) {
         Resident residentOne = getResident(playerOne);
         Resident residentTwo = getResident(playerTwo);
@@ -79,14 +84,21 @@ public class NationRelationExpansion extends PlaceholderExpansion implements Rel
         }
         Nation nationOne = getNation(residentOne);
         Nation nationTwo = getNation(residentTwo);
-        if (nationOne == null || nationTwo == null ) {
+        if (nationOne == null) {
             return "";
         }
 
+
         if (identifier.equals("color")) {
+            if (nationTwo == null) {
+                return neutral;
+            }
             return getRelation(nationOne, nationTwo);
         }
         if (identifier.equals("colored_nation")) {
+            if (nationTwo == null) {
+                return neutral + nationOne.getName();
+            }
             return getRelation(nationOne, nationTwo) + nationOne.getName();
         }
         return null;

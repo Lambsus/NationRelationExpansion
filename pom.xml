@@ -34,6 +34,14 @@
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
         <repository>
+            <id>codemc</id>
+            <url>https://repo.codemc.org/repository/maven-public</url>
+        </repository>
+        <repository>
+            <id>rayzr</id>
+            <url>https://rayzr.dev/repo/</url>
+        </repository>
+        <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
@@ -48,8 +56,8 @@
         </dependency>
         <dependency>
             <groupId>me.clip</groupId>
-            <artifactId>placeholderapi</artifactId>
-            <version>2.10.6</version>
+            <artifactId>PlaceholderAPI</artifactId>
+            <version>2.10.7</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
