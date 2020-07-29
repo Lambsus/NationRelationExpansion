@@ -118,9 +118,6 @@ public class NationRelationExpansion extends PlaceholderExpansion implements Rel
         if (nationTwo.hasEnemy(nationOne)) {
             return enemy;
         }
-        if (nationOne.isNeutral()) {
-            return neutral;
-        }
-        return "";
+        return neutral;
     }
 }
